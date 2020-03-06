@@ -1,0 +1,52 @@
+.r{
+  
+    background:linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)),
+    url('/assets/images/apple.png');
+    background-color: #cccccc; 
+    height:1500px;
+    background-position:center; 
+    background-repeat:no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    overflow: hidden;
+      }
+ .a{
+     margin-left:500px;
+     margin-top:150px;
+     background-color:grey;
+     width:850px;
+     height:880px;
+ }   
+ h3{
+     background-color:#000;
+     color:white;
+ }  
+ .icon-container {
+    margin-bottom: 20px;
+    padding: 7px 0;
+    font-size: 24px;
+  }
+input[type=number]{
+    width:150px;
+   
+}
+.b
+{
+    margin-left: 35px;
+}
+label{
+    margin-left: 35px;
+}
+.col-50{
+    margin-left:35px;
+}
+.default-select{
+    margin-left:20px;
+}
+button{
+    margin-left:575px;
+}  
+input-group-btn{
+    width:55px;
+
+}

@@ -1,0 +1,25 @@
+<div class="container">
+<div  class="jumbotron jumbotron-fluid " >
+    <h3>Category</h3>
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+              <label>Category Name</label>
+              <input type="text" formControlName="catName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.catName.errors }" />
+                  <div *ngIf="submitted && f.catName.errors" class="invalid-feedback">
+                      <div *ngIf="f.catName.errors.required">Category Name is required</div>
+                  </div>
+            </div>
+          <div class="form-group">
+              <label>Brief Details</label>
+              <textarea formControlName="briefDetails" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.briefDetails.errors }"></textarea>
+          </div>
+         <div class="text-center">
+          <button  type="submit" >Add</button>&nbsp;
+          <button  type="reset" (click)="onReset()">Reset</button>
+         </div>
+     </form>
+    </div>
+</div>
+    
+    
+    

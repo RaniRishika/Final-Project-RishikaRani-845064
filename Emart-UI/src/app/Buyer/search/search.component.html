@@ -1,0 +1,29 @@
+<div class="r">
+<div class="a">
+  <div class="search-container">
+    <form [formGroup]="buyerForm"(ngSubmit)="onSubmit()">
+      <div class="form-group">
+      <input type="text" formControlName="itemName"  placeholder="Search.." name="search">
+      <button type="submit"><i class="fa fa-search"></i></button>
+      </div>
+    </form>
+  </div>
+ <div class="card">
+<div *ngFor="let item of item">
+  <div class="b">
+    <img src='assets/images/{{item.image}}' style="height:150px; width:150px;"><br>
+    Name:{{item.itemName}}&nbsp;
+    Price:{{item.price}}&nbsp;
+    Descrption:{{item.itemDesp}}
+  </div>
+  <div>
+    <button  type="submit"(click)="BuyProduct(item)">Buy</button>&nbsp;
+    <button  type="submit"(click)="AddCart(item)">Add to Cart</button>
+  </div>
+</div>
+</div>
+</div>
+</div>
+
+    
+         

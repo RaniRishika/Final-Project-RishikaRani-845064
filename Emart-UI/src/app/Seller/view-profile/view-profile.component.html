@@ -1,0 +1,55 @@
+<div class="container">
+    <div  class="jumbotron jumbotron-fluid">
+        <h3>Profile</h3>
+            <form [formGroup]="sellerForm">
+                  <div class="row">
+                      <div class="col-12"> 
+                         <label> Name 
+                  <input type="text" formControlName="username" class="form-control" /></label>
+                   </div>
+                </div>
+             <div class="row">
+            <div class="col-6">
+                  <label>Email
+                  <input type="text" formControlName="email" class="form-control"/></label>
+            </div>
+        </div>
+            <div class="row">
+                <div class="col-4">
+                   <label>ContactNumber
+                  <input type="text" formControlName="contact" class="form-control"/></label>
+                </div>
+             <div class="col-4">
+                <label>CompanyName
+                <input type="text" formControlName="companyName" class="form-control"/></label>
+             </div>
+             <div class="col-3">
+                <label>Gstin
+                <input type="text" formControlName="gstin" class="form-control"/></label>
+             </div>
+            </div>
+            <div class="row">
+                    <label>AboutCompany
+                        <textarea formControlName="abtCompany" class="form-control"></textarea>
+                    </label>
+                </div>
+            <div class="row">
+                    <div class="col-6">	
+                    <label>Postal Address
+                <input type="text" formControlName="postaladdress" class="form-control"/></label>
+                </div>
+                <div class="col-6">
+                  <label>Website
+                 <input type="text" formControlName="compWebsite" class="form-control"/></label>
+                </div>
+            </div>
+             <div class="text-center">
+              <button  type="submit"(click)="Edit()">Edit</button>
+              <button  type="reset" (click)="UpdateSeller()">Save</button>
+             </div> 
+         </form>
+    </div>
+    </div>
+    
+        
+        

@@ -1,0 +1,50 @@
+.r{
+  background:linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)),
+  url('/assets/images/Image.jpg');
+  background-color: #cccccc; 
+  height:1500px;
+  background-position:center; 
+  background-repeat:no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  overflow: hidden;
+  }
+ .nav-item{
+  
+     float: left;
+     display: block;
+     color: #f2f2f2;
+     text-align: center;
+     padding: 14px 16px;
+     text-decoration: none;
+     font-size: 17px;
+  }
+  .dropdown-menu
+  {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+   /*.sidenav {
+    height: 100%; 
+    width: 160px; 
+    position: fixed; 
+    z-index: 1; 
+    top: 0; 
+    left: 0;
+    background-color: #111; 
+    overflow-x: hidden; 
+    padding-top: 20px;
+  }
+  .sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+  }
+  .sidenav a:hover {
+    color: #f1f1f1;
+  } */
+  

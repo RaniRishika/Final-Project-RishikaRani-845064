@@ -1,0 +1,19 @@
+<div class="a">
+<div class="table">
+<div class="table-responsive">
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Mobile</th>
+    </tr>
+    <tr *ngFor="let res of buyer">
+        <td>{{res.username}}</td>
+        <td>{{res.email}}</td>
+        <td>{{res.mobile}}</td>
+        &nbsp;
+        <td><button class="btn btn-primary mr-1">Block</button></td>&nbsp;
+        <td><button class="btn btn-danger mr-1">Unblock</button></td>
+    </tr>
+</div>
+</div>
+</div>

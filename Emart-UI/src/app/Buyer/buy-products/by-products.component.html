@@ -1,0 +1,87 @@
+<div class="r">
+    <div class="a">
+    <h3>Payment</h3>
+        <form [formGroup]="buyerForm">
+        <div class="form-group">
+          <div class="row">
+             <div class="b">
+                <img src='assets/images/{{item.image}}' style="height:150px; width:150px;"><br>
+                Name:{{item.itemName}}<br>
+                Price:{{item.price}}<br>
+                Descrption:{{item.itemDesp}}
+                </div>
+            </div>  
+        </div> 
+        <label>TransactionType</label>
+        <div class="default-select" style="width:200px;">
+         <select formControlName="transType" (change)="display()">
+            <option value="SelectTransaction">SelectTransaction</option>
+            <option value="Card">Card</option>
+            <option value="CashOnDelivery">CashOnDelivery</option>
+         </select>
+         </div>
+        
+    <br>
+    <div *ngIf= "load==true">
+        <div class="form-group">
+        <div class="row">
+        <label>Name On Card</label>
+        <input type="text" formControlName="nameOnCard" [ngClass]="{ 'is-invalid': submitted && f.nameOnCard.errors }"/>
+        <div *ngIf="submitted && f.nameOnCard.errors" class="invalid-feedback">
+            <div *ngIf="f.nameOnCard.errors.required">NAME is required</div>
+         </div> 
+        </div>
+        </div>
+        <br>
+        <div class="form-group">
+        <div class="row">
+        <label>Card Number</label>
+        <input type="number" formControlName="cardNumber" [ngClass]="{ 'is-invalid': submitted && f.cardNumber.errors }"/>
+        <div *ngIf="submitted && f.cardNumber.errors" class="invalid-feedback">
+            <div *ngIf="f.cardNumber.errors.required">CardNumber is required</div>
+         </div> 
+        </div>
+        </div>
+        <br>
+        <div class="form-group">
+        <div class="row">
+        <label>CVV</label>
+        <input type="number"formControlName="cvv" [ngClass]="{ 'is-invalid': submitted && f.cvv.errors }"/>
+        <div *ngIf="submitted && f.cvv.errors" class="invalid-feedback">
+            <div *ngIf="f.cvv.errors.required">CVV is required</div>
+         </div> 
+        </div>
+     </div>
+    </div>
+     <br>
+     <div class="form-group">
+        <div class="row">
+        <label>Number Of Items:</label>
+        <input type="number" formControlName="noOfItems" (change)="changeAmount()"/>
+        </div>
+    </div>
+    <div class="form-group">
+    <div class="row"> 
+    <div class="col-50">
+     <h6>Payment</h6>
+        <label for="fname">Accepted Cards</label>
+         <div class="icon-container">
+            <i class="fa fa-cc-visa" style="color:navy;"></i>&nbsp;
+            <i class="fa fa-cc-amex" style="color:blue;"></i>&nbsp;
+            <i class="fa fa-cc-mastercard" style="color:red;"></i>&nbsp;
+            <i class="fa fa-cc-discover" style="color:orange;"></i>
+        </div>
+    </div>
+    </div>
+    </div>
+    <div class="form-group">
+        <div class="row">
+        <label>Price</label>
+        <input type="number" formControlName="price" class="form-control" value={{price}}/>
+        </div>
+    </div>
+    </form>
+    <div><button  type="submit" class="btn btn-primary" (click)="onSubmit()">continue</button></div>  
+   
+     </div>
+</div>
