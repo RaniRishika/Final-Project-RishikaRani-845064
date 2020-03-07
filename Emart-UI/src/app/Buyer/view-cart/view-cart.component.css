@@ -1,0 +1,42 @@
+.a{
+    margin-top:200px;
+    margin-left:500px;
+  }
+  .search-container button {
+    background: rgb(95, 93, 93);
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+    width:75px; 
+  }
+  .card {
+    
+    max-width:400px; 
+    margin: auto;
+    text-align: center;
+    font-family: arial;
+    margin-left:5px;
+    margin-top:55px;
+    float:left;
+  
+  }
+  .search-container{
+    padding: 11px 16px;
+    border-radius: 2px 0 0 2px;
+    border: 0 none;
+    outline: 0 none;
+    font-size: 15px;
+  }
+  .r{
+    
+    background:linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)),
+    url('/assets/images/view-cart.jpg');
+    background-color:grey; 
+    height:1500px;
+    background-position:center; 
+    background-repeat:no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    overflow: hidden;
+      }
+      

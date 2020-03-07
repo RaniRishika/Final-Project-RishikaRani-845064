@@ -1,1 +1,20 @@
-<p>view-cart works!</p>
+<div class="a">
+<div class="card">
+ <div *ngFor="let item of cartlist">
+    <div class="b">
+        <img src='assets/images/{{item.image}}' style="height:150px; width:150px;"><br>
+        Name:{{item.itemName}}&nbsp;
+        Price:{{item.price}}&nbsp;
+        Descrption:{{item.itemDesp}}&nbsp;
+     </div>
+      <div>
+        <button  type="submit"(click)="BuyItem(item.itemId)">Buy</button>&nbsp;
+        <button  type="submit"(click)="Delete(item.cartId)">Remove</button>
+      </div>
+    </div>
+</div>
+</div>
+
+    
+        
+             

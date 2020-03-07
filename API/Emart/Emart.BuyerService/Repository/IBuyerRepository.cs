@@ -13,8 +13,16 @@ namespace Emart.BuyerService.Repository
         void EditProfile(Buyer buyer);
         Buyer GetProfile(int bid);
         List<PurchaseHistory> PurchaseHistory(int bid);
+
         List<Category> GetCategories();
         List<SubCategory> GetSubCategories(int catid);
+
+        void AddCart(Cart cart);
+        List<Cart> ViewCart(int bid);
+
+        void DeleteCart(int cartId);
+
+        Items GetItem(int itemid);
 
 
 

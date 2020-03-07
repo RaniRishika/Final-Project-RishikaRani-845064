@@ -124,20 +124,18 @@ namespace Emart.SellerService.Controllers
         }
         [HttpGet]
         [Route("ViewItems/{sid}/{SubCId}")]
-        public IActionResult ViewItems(int sid,int SubCId)
+        public IActionResult ViewItems(int sid, int SubCId)
         {
             try
             {
-
-                return Ok(_repo.ViewItems(sid,SubCId));
-
+                return Ok(_repo.ViewItems(sid, SubCId));
             }
             catch (Exception e)
             {
                 return NotFound(e.Message);
             }
-
         }
+     
 
     }
 }

@@ -25,7 +25,7 @@ export class BuyProductsComponent implements OnInit {
 
   constructor(private builder:FormBuilder,private service:BuyerService) { 
   this.item=JSON.parse(localStorage.getItem('item'));
-  }
+   }
 
   ngOnInit() {
     this.buyerForm=this.builder.group({

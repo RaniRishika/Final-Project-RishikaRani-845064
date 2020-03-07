@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { BuyerService } from 'src/app/Services/buyer.service';
+import {FormBuilder,FormGroup,Validators } from '@angular/forms';
+import{Buyer} from 'src/app/Models/buyer';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-buyer-landing-page',
@@ -7,9 +11,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BuyerLandingPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private route:Router) { 
+    if(!localStorage.getItem('buyerId'))
+      this.route.navigateByUrl('/Home/Login');
+  }
 
   ngOnInit() {
   }
-
+  logout()
+  {
+    console.log('logout successfully');
+    localStorage.removeItem('buyerId');
+   
+  }
+  
 }

@@ -4,6 +4,7 @@ import {FormBuilder,FormGroup,Validators } from '@angular/forms';
 import{Buyer} from 'src/app/Models/buyer';
 import{Items} from 'src/app/Models/items';
 import { Router } from '@angular/router';
+import { Cart } from 'src/app/Models/cart';
 
 
 @Component({
@@ -19,14 +20,18 @@ export class SearchComponent implements OnInit {
   itemName:string;
   image:string;
   item:Items;
+  cart:Cart;
 
   constructor(private builder:FormBuilder,private service:BuyerService,private route:Router) { }
 
   ngOnInit() {
     this.buyerForm=this.builder.group({
-      itemName:['']
-
-    })
+      itemName:[''],
+      itemDesp:[''],
+      price:[''],
+      image:[''],
+      itemId:[''],
+     })
   }
   onSubmit() {
     this.submitted = true;
@@ -49,7 +54,22 @@ export class SearchComponent implements OnInit {
    }
    AddCart(item:Items)
    {
+     this.cart=new Cart();
+     this.cart.buyerId=Number(localStorage.getItem('buyerId'));
+     this.cart.cartId=Math.floor(Math.random()*1000);
+     this.cart.itemId=item.itemId;
+     this.cart.image=item.image;
+     this.cart.itemName=item.itemName;
+     this.cart.itemDesp=item.itemDesp;
+     this.cart.price=item.price;
+     console.log(this.cart);
+     this.service.AddCart(this.cart).subscribe(res=>{
+       console.log("Item added to cart");
+       this.cart=res;
+       console.log(this.cart);
+     },err=>{
+       console.log(err)
+       })
+    }
      
-   }
-
-}
+  }
