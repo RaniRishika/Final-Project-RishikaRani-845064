@@ -28,10 +28,9 @@ a {
   
 input[type=text], 
 input[type=password] { 
-   
-    width: 100%;
+   width:75%;
     padding: 15px;
-    margin: 5px 0 22px 0;
+    margin: 5px 0 22px 15px;
     display: inline-block;
     border: none;
     background: #f1f1f1;
@@ -50,7 +49,7 @@ button {
   margin: 8px 0;
   border: none;
   cursor: pointer;
-  width: 75%;
+  width:45%;
   opacity: 0.9;
 } 
 .container { 
@@ -66,7 +65,7 @@ button {
     
 } 
 .jumbotron{
-  width : 350px;
+  width :650px;
   position:absolute;
   background-size: cover;
   background-color:grey;
@@ -78,6 +77,12 @@ h3{
   text-align: center;
   color:black;
 }
-
-
-
+.a{
+  margin-top:20px;
+  margin-left:70px;
+}
+input[type=number],
+input[type=email]
+{
+  width:125px;
+}

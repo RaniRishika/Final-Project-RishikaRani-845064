@@ -20,35 +20,34 @@
             <option value="CashOnDelivery">CashOnDelivery</option>
          </select>
          </div>
-        
-    <br>
+         &nbsp;
     <div *ngIf= "load==true">
         <div class="form-group">
         <div class="row">
         <label>Name On Card</label>
         <input type="text" formControlName="nameOnCard" [ngClass]="{ 'is-invalid': submitted && f.nameOnCard.errors }"/>
         <div *ngIf="submitted && f.nameOnCard.errors" class="invalid-feedback">
-            <div *ngIf="f.nameOnCard.errors.required">NAME is required</div>
+            <div class="c"*ngIf="f.nameOnCard.errors.required">Name is required</div>
          </div> 
         </div>
         </div>
-        <br>
+        &nbsp;
         <div class="form-group">
         <div class="row">
         <label>Card Number</label>
         <input type="number" formControlName="cardNumber" [ngClass]="{ 'is-invalid': submitted && f.cardNumber.errors }"/>
         <div *ngIf="submitted && f.cardNumber.errors" class="invalid-feedback">
-            <div *ngIf="f.cardNumber.errors.required">CardNumber is required</div>
+            <div class="c" *ngIf="f.cardNumber.errors.required">CardNumber is required</div>
          </div> 
         </div>
         </div>
-        <br>
+        &nbsp;
         <div class="form-group">
         <div class="row">
         <label>CVV</label>
         <input type="number"formControlName="cvv" [ngClass]="{ 'is-invalid': submitted && f.cvv.errors }"/>
         <div *ngIf="submitted && f.cvv.errors" class="invalid-feedback">
-            <div *ngIf="f.cvv.errors.required">CVV is required</div>
+            <div class="c" *ngIf="f.cvv.errors.required">CVV is required</div>
          </div> 
         </div>
      </div>
@@ -81,7 +80,7 @@
         </div>
     </div>
     </form>
-    <div><button  type="submit" class="btn btn-primary" (click)="onSubmit()">continue</button></div>  
-   
-     </div>
+    </div>
+    <br>
+    <div><button type="submit" class="btn btn-primary" (click)="onSubmit()">continue</button></div>  
 </div>

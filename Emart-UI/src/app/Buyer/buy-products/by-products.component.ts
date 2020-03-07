@@ -54,11 +54,10 @@ get f()
   }
 BuyProduct()
   {
-    console.log('buyproducts running');
     this.purchaseHistory=new Purchase();
     this.purchaseHistory.buyerId=Number(localStorage.getItem('buyerId'));
     this.purchaseHistory.sellerId=Number(localStorage.getItem('sellerId'));
-    this.purchaseHistory.itemId=Math.floor(Math.random()*1000);
+    this.purchaseHistory.itemId=this.item.itemId;
     this.purchaseHistory.id=Math.floor(Math.random()*1000);
     this.purchaseHistory.dateTime=new Date();
     this.purchaseHistory.remarks=this.item.remarks;

@@ -20,23 +20,15 @@ label{
 a {
   color: dodgerblue;
 }
-textarea
-  {
-    width: 100%; 
-  
-  
-  }
 
-
- 
-/*assign full width inputs*/ 
   
-input[type=text], 
-input[type=password] { 
+input[type=text],
+input[type=number]
+{ 
    
-    width: 100%;
+    width: 75%;
     padding: 15px;
-    margin: 5px 0 22px 0;
+    margin: 5px 0 22px 15px;
     display: inline-block;
     border: none;
     background: #f1f1f1;
@@ -55,7 +47,7 @@ button {
   margin: 8px 0;
   border: none;
   cursor: pointer;
-  width: 100%;
+  width: 90px;
   opacity: 0.9;
 } 
 .container { 
@@ -77,12 +69,26 @@ button {
   background-color:grey;
   background-attachment: fixed;
   margin-left:350px;
-  margin-top:200px;
+  margin-top:150px;
 }
 h3{
   text-align: center;
   color:black;
 }
+label{
+   margin-left:25px;  
+}
+.a{
+  margin-top:5px;
+  margin-left:105px;
+}
 
-
+textarea{
+width:75%;
+margin-left:15px;
+}
+.a{
+margin-top:5px;
+margin-left:60px;
+}
 

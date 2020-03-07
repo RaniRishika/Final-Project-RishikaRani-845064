@@ -8,9 +8,11 @@
   }
   th{
     font-size:20px;
+    margin-left:35px;
   }
   td{
     font-size:15px;
+    margin-left:35px;
   }
   
   .a{
@@ -23,5 +25,10 @@
   button
   {
     font-size:15px;
+  }
+  .table
+  {
+    width:650px;
+    
   }
   
