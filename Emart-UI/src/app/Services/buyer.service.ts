@@ -38,6 +38,10 @@ export class BuyerService {
   {
     return this.http.post<any>(this.url+'/AddCart',cart,Requestheaders);
   }
+  public GetCart(itemId:number):Observable<any>
+  {
+    return this.http.get<any>(this.url+'/GetCart/'+itemId,Requestheaders);
+  }
   public ViewCart(buyerId:number):Observable<any>
   {
     return this.http.get<any>(this.url+'/ViewCart/'+buyerId,Requestheaders);

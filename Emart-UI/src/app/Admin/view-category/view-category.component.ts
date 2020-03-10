@@ -31,6 +31,9 @@ export class ViewCategoryComponent implements OnInit {
     // this.Update();
 
   }
+  onSubmit() {
+    this.submitted = true;
+  }
   get f()
  {
    return this.adminForm.controls;

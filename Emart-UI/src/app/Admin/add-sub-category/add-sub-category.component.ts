@@ -3,6 +3,7 @@ import {FormBuilder,FormGroup,Validators } from '@angular/forms';
 import { AdminService} from 'src/app/Services/admin.service';
 import {SubCategory} from  'src/app/Models/sub-category';
 import { Category } from 'src/app/Models/category';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-sub-category',
@@ -15,10 +16,12 @@ export class AddSubCategoryComponent implements OnInit {
   registerForm:FormGroup;
   submitted=false;
   category:Category[];
+  load:boolean;
  subcategory:SubCategory;
+ subcat:SubCategory[];
 
 
-  constructor(private fromBuilder:FormBuilder,private service:AdminService) { }
+  constructor(private fromBuilder:FormBuilder,private service:AdminService,private router:Router) { }
 
   ngOnInit() {
      this.registerForm=this.fromBuilder.group({     
@@ -63,11 +66,25 @@ export class AddSubCategoryComponent implements OnInit {
         this.subcategory.briefSubCdetails=this.registerForm.value['briefSubCdetails'];
         this.subcategory.gst=this.registerForm.value['Gst'];
    console.log(this.subcategory);
-  this.service.AddSubCategory(this.subcategory).subscribe(res=>{      
-    console.log('SubCategory Added')
-         },err=>{
-           console.log(err)
-                  })
+   this.service.GetSubCategoryByName(this.subcategory.subCName).subscribe(res=>{
+    this.subcat=res;
+    console.log(this.subcat);
+    if(!this.subcat)
+  {
+    this.load=false;
+  this.service.AddSubCategory(this.subcategory).subscribe(res=>{
+    console.log("record added");
+    this.router.navigateByUrl('/Admin/ViewSubCategory');
+  },err=>{
+    console.log(err)
+  })
+}
+else{
+  this.load=true;
+  alert("already exist");
+}
+})
+
     }
       
 

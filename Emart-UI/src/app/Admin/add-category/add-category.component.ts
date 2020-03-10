@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder,FormGroup,Validators } from '@angular/forms';
 import { AdminService} from 'src/app/Services/admin.service';
 import {Category} from 'src/app/Models/category';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-category',
@@ -12,10 +13,12 @@ import {Category} from 'src/app/Models/category';
 export class AddCategoryComponent implements OnInit {
   registerForm:FormGroup;
   submitted=false;
+  load:boolean;
   category:Category;
+  cat:Category[];
 
 
-  constructor(private fromBuilder:FormBuilder,private service:AdminService) { }
+  constructor(private fromBuilder:FormBuilder,private service:AdminService,private router:Router) { }
 
   ngOnInit() {
     this.registerForm=this.fromBuilder.group({
@@ -48,13 +51,25 @@ AddCategory()
      this.category.catId=Math.floor(Math.random()*1000);
      this.category.catName=this.registerForm.value['catName'];
      this.category.briefDetails=this.registerForm.value['briefDetails'];
-    
      console.log(this.category);
-     this.service.AddCategory(this.category).subscribe(res=>{
-     console.log('Category Added')
-          },err=>{
-         console.log(err)
-          })
-   }
+     this.service.GetCategoryByName(this.category.catName).subscribe(res=>{
+      this.cat=res;
+      console.log(this.cat);
+      if(!this.cat)
+    {
+      this.load=false;
+    this.service.AddCategory(this.category).subscribe(res=>{
+      console.log("record added");
+      this.router.navigateByUrl('/Admin/ViewCategory');
+    },err=>{
+      console.log(err)
+    })
+  }
+  else{
+    this.load=true;
+    alert("already exist");
+  }
+  })
       
+}
 }

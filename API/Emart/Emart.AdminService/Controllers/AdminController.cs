@@ -19,7 +19,7 @@ namespace Emart.AdminService.Controllers
         public AdminController(IAdminRepository repo)
         {
             _repo = repo;
-          }
+        }
         [HttpPost]
         [Route("AddCategory")]
         public IActionResult AddCategory(Category category)
@@ -80,7 +80,7 @@ namespace Emart.AdminService.Controllers
         {
             try
             {
-                return Ok(_repo.GetBuyerProfile( ));
+                return Ok(_repo.GetBuyerProfile());
             }
             catch (Exception e)
             {
@@ -109,6 +109,19 @@ namespace Emart.AdminService.Controllers
             try
             {
                 return Ok(_repo.GetCategoryById(CatId));
+            }
+            catch (Exception e)
+            {
+                return NotFound(e.Message);
+            }
+        }
+        [HttpGet]
+        [Route("GetSubCategoryById/{SubCId}")]
+        public IActionResult GetSubCategoryById(int SubCatId)
+        {
+            try
+            {
+                return Ok(_repo.GetSubCategoryById(SubCatId));
             }
             catch (Exception e)
             {
@@ -151,6 +164,46 @@ namespace Emart.AdminService.Controllers
             {
                 _repo.UpdateCategory(category);
                 return Ok();
+            }
+            catch (Exception e)
+            {
+                return NotFound(e.Message);
+            }
+        }
+        [HttpPut]
+        [Route("UpdateSubCategory/{subcategory}")]
+        public IActionResult UpdateSubCategory(SubCategory subcategory)
+        {
+            try
+            {
+                _repo.UpdateSubCategory(subcategory);
+                return Ok();
+            }
+            catch (Exception e)
+            {
+                return NotFound(e.Message);
+            }
+        }
+        [HttpGet]
+        [Route("GetCategoryByName/{name}")]
+        public IActionResult GetCategoryByName(string name)
+        {
+            try
+            {
+                return Ok(_repo.GetCategoryByName(name));
+            }
+            catch (Exception e)
+            {
+                return NotFound(e.Message);
+            }
+        }
+        [HttpGet]
+        [Route("GetSubCategoryByName/{name}")]
+        public IActionResult GetSubCategoryByName(string name)
+        {
+            try
+            {
+                return Ok(_repo.GetSubCategoryByName(name));
             }
             catch (Exception e)
             {

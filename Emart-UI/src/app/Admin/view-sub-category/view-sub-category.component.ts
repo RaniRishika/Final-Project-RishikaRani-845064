@@ -32,6 +32,9 @@ export class ViewSubCategoryComponent implements OnInit {
     this.GetCategory();
   
   }
+  onSubmit() {
+    this.submitted = true;
+  }
   get f()
   {
     return this.registerForm.controls;

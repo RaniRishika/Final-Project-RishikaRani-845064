@@ -21,7 +21,7 @@ export class SearchComponent implements OnInit {
   image:string;
   item:Items;
   cart:Cart;
-
+  s:number;
   constructor(private builder:FormBuilder,private service:BuyerService,private route:Router) { }
 
   ngOnInit() {
@@ -71,5 +71,35 @@ export class SearchComponent implements OnInit {
        console.log(err)
        })
     }
+  GetCart(item:Items)
+  {
+    let itemId=item.itemId;
+    this.service.GetCart(itemId).subscribe(res=>
+      {
+        this.s=res;
+        if(this.s!=0)
+         alert("already added");
+         else
+          {
+            this.cart=new Cart();
+            this.cart.buyerId=Number(localStorage.getItem('buyerId'));
+            this.cart.cartId=Math.floor(Math.random()*1000);
+            this.cart.itemId=item.itemId;
+            this.cart.image=item.image;
+            this.cart.itemName=item.itemName;
+            this.cart.itemDesp=item.itemDesp;
+            this.cart.price=item.price;
+            console.log(this.cart);
+            this.service.AddCart(this.cart).subscribe(res=>{
+              console.log("Item added to cart");
+              this.cart=res;
+              console.log(this.cart);
+            },err=>{
+              console.log(err)
+              })
+          }
+      }
+      )
+  }
      
   }

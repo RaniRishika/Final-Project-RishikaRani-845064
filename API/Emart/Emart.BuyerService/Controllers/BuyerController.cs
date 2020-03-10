@@ -28,7 +28,7 @@ namespace Emart.BuyerService.Controllers
             {
                 return Ok(_repo.GetProfile(bid));
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 return NotFound(e.Message);
             }
@@ -42,7 +42,7 @@ namespace Emart.BuyerService.Controllers
                 _repo.EditProfile(buyer);
                 return Ok();
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 return NotFound(e.Message);
             }
@@ -56,7 +56,7 @@ namespace Emart.BuyerService.Controllers
                 _repo.BuyItem(item);
                 return Ok();
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 return NotFound(e.Message);
             }
@@ -68,9 +68,9 @@ namespace Emart.BuyerService.Controllers
         {
             try
             {
-               return Ok( _repo.SearchItems(name));
+                return Ok(_repo.SearchItems(name));
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 return NotFound(e.Message);
             }
@@ -83,7 +83,7 @@ namespace Emart.BuyerService.Controllers
             {
                 return Ok(_repo.PurchaseHistory(bid));
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 return NotFound(e.Message);
 
@@ -95,9 +95,9 @@ namespace Emart.BuyerService.Controllers
         {
             try
             {
-                 return Ok(_repo.GetCategories());
+                return Ok(_repo.GetCategories());
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 return NotFound(e.Message);
             }
@@ -108,7 +108,7 @@ namespace Emart.BuyerService.Controllers
         {
             try
             {
-                 return Ok(_repo.GetSubCategories(catid));
+                return Ok(_repo.GetSubCategories(catid));
             }
             catch (Exception e)
             {
@@ -128,7 +128,22 @@ namespace Emart.BuyerService.Controllers
             {
                 return NotFound(e.InnerException.Message);
             }
-         }
+        }
+        [HttpGet]
+        [Route("GetCart/{itemid}")]
+        public IActionResult GetCart(int itemid)
+        {
+            try
+            {
+                return Ok(_repo.GetCart(itemid));
+            }
+            catch (Exception e)
+            {
+                return NotFound(e.Message);
+            }
+        }
+
+
         [HttpGet]
         [Route("ViewCart/{bid}")]
         public IActionResult ViewCart(int bid)
@@ -141,7 +156,7 @@ namespace Emart.BuyerService.Controllers
             }
             catch (Exception e)
             {
-                return NotFound(e.InnerException.Message);
+                return NotFound(e.Message);
             }
 
         }

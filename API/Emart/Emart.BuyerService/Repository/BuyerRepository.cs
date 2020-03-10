@@ -59,6 +59,11 @@ namespace Emart.BuyerService.Repository
             _context.Add(cart);
             _context.SaveChanges();
         }
+        public int GetCart(int itemId)
+        {
+            int getCart = _context.Cart.Where(e => e.ItemId == itemId).ToList().Count();
+            return getCart;
+        }
         public List<Cart> ViewCart(int bid)
         {
             List<Cart> cart = _context.Cart.Where(e => e.BuyerId== bid).ToList();

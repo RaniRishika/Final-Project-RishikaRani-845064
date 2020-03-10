@@ -45,11 +45,19 @@ namespace Emart.AdminService.Repository
             List<Seller> seller = _context.Seller.ToList();
             return seller;
         }
-        public List<Category> GetCategoryById(int CatId)
+        public Category GetCategoryById(int CatId)
         {
-            List<Category> category = _context.Category.Where(e => e.CatId == CatId).ToList();
+            Category category = _context.Category.Find(CatId);
             return category;
         }
+        public SubCategory GetSubCategoryById(int SubCId)
+        {
+            SubCategory subcategory = _context.SubCategory.Find(SubCId);
+
+            return subcategory;
+
+        }
+
 
         public void DeleteCategory(int CatId)
         {
@@ -68,6 +76,19 @@ namespace Emart.AdminService.Repository
             _context.Update(category);
             _context.SaveChanges();
         }
+        public void UpdateSubCategory(SubCategory subcategory)
+        {
+            _context.Update(subcategory);
+            _context.SaveChanges();
+        }
+        public Category GetCategoryByName(string name)
+        {
+            return _context.Category.SingleOrDefault(e => e.CatName == name);
+        }
 
+        public SubCategory GetSubCategoryByName(string name)
+        {
+            return _context.SubCategory.SingleOrDefault(e => e.SubCName == name);
+        }
     }
 }

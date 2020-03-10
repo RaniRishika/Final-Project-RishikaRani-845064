@@ -15,6 +15,7 @@ export class ViewItemsComponent implements OnInit {
   itemForm:FormGroup;
   submitted=false;
   item:Items;
+  items:Items[];
   category:Category;
   subcategory:SubCategory;
 
@@ -83,4 +84,5 @@ export class ViewItemsComponent implements OnInit {
       this.GetItem();
         })
       }
+   
 }

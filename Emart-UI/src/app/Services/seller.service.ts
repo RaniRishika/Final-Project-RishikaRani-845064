@@ -48,5 +48,9 @@ export class SellerService {
   {
     return this.http.put<any>(this.url1+'/EditProfile/',seller,Requestheaders);
   }
+  public UpdateItem(item:Items):Observable<any>
+  {
+    return this.http.put<any>(this.url+'/UpdateItem/',item,Requestheaders);
+  }
  
 }

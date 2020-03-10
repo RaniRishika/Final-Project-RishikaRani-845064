@@ -64,12 +64,8 @@
                 <label>Brief Details</label>
                 <textarea formControlName="itemDesp" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.itemDesp.errors}"></textarea>
             </div>
-            <div class="form-group">
-              <label>Remarks</label>
-              <textarea formControlName="remarks" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.remarks.errors }"></textarea>
-          </div>
            <div class="text-center">
-            <button  type="submit" >Add</button>
+            <button  type="submit" >Add</button>&nbsp;
             <button  type="reset" (click)="onReset()">Reset</button>
            </div>
          </form>

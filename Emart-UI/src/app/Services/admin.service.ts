@@ -57,5 +57,13 @@ export class AdminService {
  {
    return this.http.delete<any>(this.url+'/DeleteSubCategory/'+subCId,Requestheaders);
  }
+ public GetCategoryByName(catName:string):Observable<any>
+ {
+   return this.http.get<any>(this.url+'/GetCategoryByName/'+catName,Requestheaders);
+ }
+ public GetSubCategoryByName(SubCName:string):Observable<any>
+ {
+   return this.http.get<any>(this.url+'/GetSubCategoryByName/'+SubCName,Requestheaders);
+ }
 
 }
