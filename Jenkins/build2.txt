@@ -1,0 +1,35 @@
+Started by user admin
+Running as SYSTEM
+Building in workspace C:\Program Files (x86)\Jenkins\workspace\EmartUI
+No credentials specified
+ > C:\Program Files\Git\bin\git.exe rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > C:\Program Files\Git\bin\git.exe config remote.origin.url https://github.com/RaniRishika/Final-Project-RishikaRani-845064 # timeout=10
+Fetching upstream changes from https://github.com/RaniRishika/Final-Project-RishikaRani-845064
+ > C:\Program Files\Git\bin\git.exe --version # timeout=10
+ > C:\Program Files\Git\bin\git.exe fetch --tags --force --progress -- https://github.com/RaniRishika/Final-Project-RishikaRani-845064 +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > C:\Program Files\Git\bin\git.exe rev-parse "refs/remotes/origin/master^{commit}" # timeout=10
+ > C:\Program Files\Git\bin\git.exe rev-parse "refs/remotes/origin/origin/master^{commit}" # timeout=10
+Checking out Revision 605bacc8ebe164845b0ab8318d39f8394b17c654 (refs/remotes/origin/master)
+ > C:\Program Files\Git\bin\git.exe config core.sparsecheckout # timeout=10
+ > C:\Program Files\Git\bin\git.exe checkout -f 605bacc8ebe164845b0ab8318d39f8394b17c654 # timeout=10
+Commit message: "march10"
+ > C:\Program Files\Git\bin\git.exe rev-list --no-walk 605bacc8ebe164845b0ab8318d39f8394b17c654 # timeout=10
+[EmartUI] $ cmd /c call C:\Windows\TEMP\jenkins6475098032223260079.bat
+
+C:\Program Files (x86)\Jenkins\workspace\EmartUI>Cd EmartUI 
+The system cannot find the path specified.
+
+C:\Program Files (x86)\Jenkins\workspace\EmartUI>npm install 
+npm WARN saveError ENOENT: no such file or directory, open 'C:\Program Files (x86)\Jenkins\workspace\EmartUI\package.json'
+npm notice created a lockfile as package-lock.json. You should commit this file.
+npm WARN enoent ENOENT: no such file or directory, open 'C:\Program Files (x86)\Jenkins\workspace\EmartUI\package.json'
+npm WARN EmartUI No description
+npm WARN EmartUI No repository field.
+npm WARN EmartUI No README data
+npm WARN EmartUI No license field.
+
+up to date in 0.939s
+found 0 vulnerabilities
+
+Finished: SUCCESS

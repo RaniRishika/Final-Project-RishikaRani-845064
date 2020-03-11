@@ -1,0 +1,23 @@
+Started by user admin
+Running as SYSTEM
+Building in workspace C:\Program Files (x86)\Jenkins\workspace\EmartUI
+No credentials specified
+Cloning the remote Git repository
+Cloning repository https://github.com/RaniRishika/Final-Project-RishikaRani-845064
+ > C:\Program Files\Git\bin\git.exe init C:\Program Files (x86)\Jenkins\workspace\EmartUI # timeout=10
+Fetching upstream changes from https://github.com/RaniRishika/Final-Project-RishikaRani-845064
+ > C:\Program Files\Git\bin\git.exe --version # timeout=10
+ > C:\Program Files\Git\bin\git.exe fetch --tags --force --progress -- https://github.com/RaniRishika/Final-Project-RishikaRani-845064 +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > C:\Program Files\Git\bin\git.exe config remote.origin.url https://github.com/RaniRishika/Final-Project-RishikaRani-845064 # timeout=10
+ > C:\Program Files\Git\bin\git.exe config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > C:\Program Files\Git\bin\git.exe config remote.origin.url https://github.com/RaniRishika/Final-Project-RishikaRani-845064 # timeout=10
+Fetching upstream changes from https://github.com/RaniRishika/Final-Project-RishikaRani-845064
+ > C:\Program Files\Git\bin\git.exe fetch --tags --force --progress -- https://github.com/RaniRishika/Final-Project-RishikaRani-845064 +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > C:\Program Files\Git\bin\git.exe rev-parse "refs/remotes/origin/master^{commit}" # timeout=10
+ > C:\Program Files\Git\bin\git.exe rev-parse "refs/remotes/origin/origin/master^{commit}" # timeout=10
+Checking out Revision 605bacc8ebe164845b0ab8318d39f8394b17c654 (refs/remotes/origin/master)
+ > C:\Program Files\Git\bin\git.exe config core.sparsecheckout # timeout=10
+ > C:\Program Files\Git\bin\git.exe checkout -f 605bacc8ebe164845b0ab8318d39f8394b17c654 # timeout=10
+Commit message: "march10"
+First time build. Skipping changelog.
+Finished: SUCCESS

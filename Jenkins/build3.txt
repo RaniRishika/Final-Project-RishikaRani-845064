@@ -1,0 +1,69 @@
+Started by user admin
+Running as SYSTEM
+Building in workspace C:\Program Files (x86)\Jenkins\workspace\EmartUI
+No credentials specified
+ > C:\Program Files\Git\bin\git.exe rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > C:\Program Files\Git\bin\git.exe config remote.origin.url https://github.com/RaniRishika/Final-Project-RishikaRani-845064 # timeout=10
+Fetching upstream changes from https://github.com/RaniRishika/Final-Project-RishikaRani-845064
+ > C:\Program Files\Git\bin\git.exe --version # timeout=10
+ > C:\Program Files\Git\bin\git.exe fetch --tags --force --progress -- https://github.com/RaniRishika/Final-Project-RishikaRani-845064 +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > C:\Program Files\Git\bin\git.exe rev-parse "refs/remotes/origin/master^{commit}" # timeout=10
+ > C:\Program Files\Git\bin\git.exe rev-parse "refs/remotes/origin/origin/master^{commit}" # timeout=10
+Checking out Revision c26d3ab9e89f99fc766928ea47059e73dfabcf3d (refs/remotes/origin/master)
+ > C:\Program Files\Git\bin\git.exe config core.sparsecheckout # timeout=10
+ > C:\Program Files\Git\bin\git.exe checkout -f c26d3ab9e89f99fc766928ea47059e73dfabcf3d # timeout=10
+Commit message: "march11"
+ > C:\Program Files\Git\bin\git.exe rev-list --no-walk c26d3ab9e89f99fc766928ea47059e73dfabcf3d # timeout=10
+[EmartUI] $ cmd /c call C:\Windows\TEMP\jenkins2793786574290484346.bat
+
+C:\Program Files (x86)\Jenkins\workspace\EmartUI>Cd Emart-UI 
+
+C:\Program Files (x86)\Jenkins\workspace\EmartUI\Emart-UI>npm install 
+
+> core-js@3.6.4 postinstall C:\Program Files (x86)\Jenkins\workspace\EmartUI\Emart-UI\node_modules\core-js
+> node -e "try{require('./postinstall')}catch(e){}"
+
+
+> core-js@2.6.11 postinstall C:\Program Files (x86)\Jenkins\workspace\EmartUI\Emart-UI\node_modules\karma\node_modules\core-js
+> node -e "try{require('./postinstall')}catch(e){}"
+
+
+> @angular/cli@8.3.25 postinstall C:\Program Files (x86)\Jenkins\workspace\EmartUI\Emart-UI\node_modules\@angular\cli
+> node ./bin/postinstall/script.js
+
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.11 (node_modules\webpack-dev-server\node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.11: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.11 (node_modules\watchpack\node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.11: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.11 (node_modules\karma\node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.11: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.11 (node_modules\@angular\compiler-cli\node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.11: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@2.1.2 (node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@2.1.2: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})
+
+added 1177 packages from 1050 contributors and audited 19101 packages in 109.955s
+found 1 moderate severity vulnerability
+  run `npm audit fix` to fix them, or `npm audit` for details
+[EmartUI] $ cmd /c call C:\Windows\TEMP\jenkins6846984413692402032.bat
+
+C:\Program Files (x86)\Jenkins\workspace\EmartUI>CD Emart-UI 
+
+C:\Program Files (x86)\Jenkins\workspace\EmartUI\Emart-UI>npm run ng -- build --prod  
+
+> emart-ui@0.0.0 ng C:\Program Files (x86)\Jenkins\workspace\EmartUI\Emart-UI
+> ng "build" "--prod"
+
+Generating ES5 bundles for differential loading...
+ES5 bundle generation complete.
+
+chunk {0} runtime-es2015.c5fa8325f89fc516600b.js (runtime) 1.45 kB [entry] [rendered]
+chunk {0} runtime-es5.c5fa8325f89fc516600b.js (runtime) 1.45 kB [entry] [rendered]
+chunk {2} polyfills-es2015.5b10b8fd823b6392f1fd.js (polyfills) 36.2 kB [initial] [rendered]
+chunk {3} polyfills-es5.8e50a9832860f7cf804a.js (polyfills-es5) 126 kB [initial] [rendered]
+chunk {1} main-es2015.0e788c26ffd2c5829564.js (main) 466 kB [initial] [rendered]
+chunk {1} main-es5.0e788c26ffd2c5829564.js (main) 536 kB [initial] [rendered]
+chunk {4} styles.ca851f1c2a5ba70669ed.css (styles) 154 kB [initial] [rendered]
+Date: 2020-03-11T07:40:16.967Z - Hash: 23d65b3dda8291048b49 - Time: 39182ms
+Finished: SUCCESS
