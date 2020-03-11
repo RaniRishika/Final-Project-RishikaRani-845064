@@ -16,12 +16,13 @@ export class ViewCategoryComponent implements OnInit {
   submitted=false;
   category:Category[];
   cat:Category;
-
+  id:number;
 
   constructor(private fromBuilder:FormBuilder,private service:AdminService) { }
 
   ngOnInit() {
     this.adminForm=this.fromBuilder.group({
+
       catName:['',[Validators.required,Validators.pattern('^[A-Za-z]{3,25}$')]],
       briefDetails:[''],
     });
@@ -48,7 +49,7 @@ export class ViewCategoryComponent implements OnInit {
   {
       this.service.GetCategoryById(catId).subscribe(res=>{
       this.cat=res;
-      this.cat.catId=catId;
+      this.id=this.cat.catId;
       console.log(this.cat);
       this.adminForm.setValue({
         catName:this.cat.catName,
@@ -58,18 +59,20 @@ export class ViewCategoryComponent implements OnInit {
 
     })
   }
-  // Update()
-  // {
-  //   this.cat.catName=this.adminForm.value['catName'],
-  //   this.cat.briefDetails=this.adminForm.value['briefDetails'],
-  //   console.log(this.cat);
-  //   this.service.UpdateCategory(this.cat).subscribe(res=>{
-  //     console.log("updated");
-  //     this.Get();
-  //   },err=>{
-  //     console.log(err)
-  //   })
-  // }
+  Update()
+  {
+    this.cat=new Category();
+    this.cat.catId=this.id;
+    this.cat.catName=this.adminForm.value['catName'],
+    this.cat.briefDetails=this.adminForm.value['briefDetails'],
+    console.log(this.cat);
+    this.service.UpdateCategory(this.cat).subscribe(res=>{
+      console.log("updated");
+      this.Get();
+    },err=>{
+      console.log(err)
+    })
+  }
   
   Delete(catId:number)
   {

@@ -15,10 +15,10 @@ export class ViewSubCategoryComponent implements OnInit {
   registerForm:FormGroup;
   submitted=false;
   category:Category[];
- subcategory:SubCategory;
-
-
-
+ subcategory:SubCategory[];
+subcat:SubCategory;
+id:number;
+catId:number;
   constructor(private fromBuilder:FormBuilder,private service:AdminService) { }
 
   ngOnInit() {
@@ -56,6 +56,40 @@ export class ViewSubCategoryComponent implements OnInit {
   },err=>{
     console.log(err)
      })
+}
+GetSubCategoryById(SubCId:number)
+{
+    this.service.GetSubCategoryById(SubCId).subscribe(res=>{
+    this.subcat=res;
+    this.id=this.subcat.subCId;
+    this.catId=this.subcat.catId;
+
+    console.log(this.subcat);
+    this.registerForm.setValue({
+      SubCName:this.subcat.subCName,
+      Gst:this.subcat.gst,
+      BriefSubCdetails:this.subcat.briefSubCdetails,
+      catName:""
+
+    });
+
+  })
+}
+Update()
+{
+  this.subcat=new SubCategory();
+  this.subcat.subCId=this.id;
+  this.subcat.catId=this.catId;
+  this.subcat.subCName=this.registerForm.value['SubCName'],
+   this.subcat.gst=this.registerForm.value['Gst'],
+  this.subcat.briefSubCdetails=this.registerForm.value['BriefSubCdetails'],
+  console.log(this.subcat);
+  this.service.UpdateSubCategory(this.subcat).subscribe(res=>{
+    console.log("updated");
+    this.GetSubCategory();
+  },err=>{
+    console.log(err)
+  })
 }
 Delete(subCId:number)
   {

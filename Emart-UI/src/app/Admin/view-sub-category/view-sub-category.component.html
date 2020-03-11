@@ -23,7 +23,7 @@
             <td>{{res.briefSubCdetails}}</td>
             <td>{{res.gst}}</td>
             <td>{{res.catId}}</td>
-          <td><button type="button" class="btn btn-info btn-lg" data-toggle="modal"  data-target="#myModal">Edit</button></td>
+          <td><button type="button" class="btn btn-info btn-lg" data-toggle="modal"  data-target="#myModal" (click)="GetSubCategoryById(res.subCId)">Edit</button></td>
         <td><button class="btn btn-danger mr-1"(click)="Delete(res.subCId)">Delete</button></td>
 </tr>
 </div>
@@ -55,7 +55,7 @@
           </div>
         
           <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Ok</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal"(click)="Update()">Ok</button>
           </div>
         </div>
     </div>

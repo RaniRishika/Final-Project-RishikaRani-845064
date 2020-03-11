@@ -12,7 +12,7 @@ namespace Emart.AdminService.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
+    
     public class AdminController : ControllerBase
     {
         private readonly IAdminRepository _repo;
@@ -117,11 +117,11 @@ namespace Emart.AdminService.Controllers
         }
         [HttpGet]
         [Route("GetSubCategoryById/{SubCId}")]
-        public IActionResult GetSubCategoryById(int SubCatId)
+        public IActionResult GetSubCategoryById(int SubCId)
         {
             try
             {
-                return Ok(_repo.GetSubCategoryById(SubCatId));
+                return Ok(_repo.GetSubCategoryById(SubCId));
             }
             catch (Exception e)
             {
@@ -157,7 +157,7 @@ namespace Emart.AdminService.Controllers
             }
         }
         [HttpPut]
-        [Route("UpdateCategory/{category}")]
+        [Route("UpdateCategory")]
         public IActionResult UpdateCategory(Category category)
         {
             try
@@ -171,7 +171,7 @@ namespace Emart.AdminService.Controllers
             }
         }
         [HttpPut]
-        [Route("UpdateSubCategory/{subcategory}")]
+        [Route("UpdateSubCategory")]
         public IActionResult UpdateSubCategory(SubCategory subcategory)
         {
             try

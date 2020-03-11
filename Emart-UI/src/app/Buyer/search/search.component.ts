@@ -20,8 +20,11 @@ export class SearchComponent implements OnInit {
   itemName:string;
   image:string;
   item:Items;
+  items:Items[];
   cart:Cart;
   s:number;
+  load:boolean=false;
+  a:boolean=false;
   constructor(private builder:FormBuilder,private service:BuyerService,private route:Router) { }
 
   ngOnInit() {
@@ -41,8 +44,17 @@ export class SearchComponent implements OnInit {
   {
     this.itemName=this.buyerForm.value['itemName'];
     this.service.SearchItems(this.itemName).subscribe(res=>{
+    this.items=res;
     this.item=res;
-    console.log(this.item);
+    console.log(this.items);
+    if(this.items.length==0)
+    {
+      this.a=true;
+    }
+    else{
+      this.load=true;
+    }
+
   },err=>{
     console.log(err)
      })

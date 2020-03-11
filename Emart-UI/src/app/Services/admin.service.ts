@@ -49,6 +49,14 @@ export class AdminService {
  {
    return this.http.put<any>(this.url+'/UpdateCategory',cat,Requestheaders);
  }
+ public GetSubCategoryById(subCId:number):Observable<any>
+ {
+   return this.http.get<any>(this.url+'/GetSubCategoryById/'+subCId,Requestheaders);
+ }
+ public UpdateSubCategory(subcat:SubCategory):Observable<any>
+ {
+   return this.http.put<any>(this.url+'/UpdateSubCategory',subcat,Requestheaders);
+ }
  public DeleteCategory(catId:number): Observable<any>
  {
    return this.http.delete<any>(this.url+'/DeleteCategory/'+catId,Requestheaders);

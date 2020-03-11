@@ -9,6 +9,7 @@
     </form>
   </div>
  <div class="card">
+  <div *ngIf="true">
 <div *ngFor="let item of item">
   <div class="b">
     <img src='assets/images/{{item.image}}' style="height:150px; width:150px;"><br>
@@ -21,6 +22,12 @@
     <button  type="submit"(click)="GetCart(item)">Add to Cart</button>
   </div>
 </div>
+
+ 
+</div>
+</div>
+<div *ngIf="a==true&&load==false">
+  <p  style="margin-left:120px;color:black;font-style:bold;font-size:large;">Item Not Found</p>
 </div>
 </div>
 </div>
