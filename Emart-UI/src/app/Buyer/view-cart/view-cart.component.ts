@@ -59,10 +59,10 @@ export class ViewCartComponent implements OnInit {
        this.service.GetItem(itemId).subscribe(res=>{
        this.item=res;
        console.log(this.item);
-         },err=>{
+       localStorage.setItem('item',JSON.stringify(this.item));
+      },err=>{
       console.log(err)
-      localStorage.setItem('item',JSON.stringify(this.item));
-      })
+    })
       this.route.navigateByUrl('/Buyer/BuyProducts');
      }
 

@@ -22,13 +22,10 @@ export class ViewCategoryComponent implements OnInit {
 
   ngOnInit() {
     this.adminForm=this.fromBuilder.group({
-      catId:[''],
       catName:['',[Validators.required,Validators.pattern('^[A-Za-z]{3,25}$')]],
       briefDetails:[''],
     });
     this.Get();
-    // this.GetCategoryById( );
-    // this.Update();
 
   }
   onSubmit() {
@@ -47,24 +44,33 @@ export class ViewCategoryComponent implements OnInit {
 
     })
   }
-  // GetCategoryById( )
-  // {
-  //     this.cat.catId=this.adminForm.value['catId'],
-  //     this.service.GetCategoryById().subscribe(res=>{
-  //     this.category=res;
-  //     console.log(this.category);
-  //   })
-  // }
-  // Update()
-  // {
-  //   this.cat.catName=this.adminForm.value['catName'],
-  //   this.cat.briefDetails=this.adminForm.value['briefDetails'],
-  //     this.service.UpdateCategory(this.cat).subscribe(res=>{
-  //     this.cat=res;
-  //     console.log(this.cat);
-  //   })
-    
-  // }
+  GetCategoryById(catId:number)
+  {
+      this.service.GetCategoryById(catId).subscribe(res=>{
+      this.cat=res;
+      this.cat.catId=catId;
+      console.log(this.cat);
+      this.adminForm.setValue({
+        catName:this.cat.catName,
+        briefDetails:this.cat.briefDetails,
+
+      });
+
+    })
+  }
+  Update()
+  {
+    this.cat.catName=this.adminForm.value['catName'],
+    this.cat.briefDetails=this.adminForm.value['briefDetails'],
+    console.log(this.cat);
+    this.service.UpdateCategory(this.cat).subscribe(res=>{
+      console.log("updated");
+      this.Get();
+    },err=>{
+      console.log(err)
+    })
+  }
+  
   Delete(catId:number)
   {
     this.service.DeleteCategory(catId).subscribe(res=>{

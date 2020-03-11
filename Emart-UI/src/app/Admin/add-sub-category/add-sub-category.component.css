@@ -22,11 +22,11 @@ a {
 }
 
   
-input[type=text],
-input[type=number]
+input[type=text]
+
 { 
    
-    width: 75%;
+    width:70%;
     padding: 15px;
     margin: 5px 0 22px 15px;
     display: inline-block;
@@ -90,5 +90,9 @@ margin-left:15px;
 .a{
 margin-top:5px;
 margin-left:60px;
+}
+input[type=number]
+{
+  margin: 5px 0 22px 6px;
 }
 

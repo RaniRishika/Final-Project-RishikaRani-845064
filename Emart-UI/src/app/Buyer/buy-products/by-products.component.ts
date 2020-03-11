@@ -44,6 +44,7 @@ export class BuyProductsComponent implements OnInit {
  onSubmit() {
   this.submitted = true;
   this.BuyProduct();
+  alert("payment done");
   }
  
    
@@ -82,6 +83,7 @@ BuyProduct()
          this.load=true;
     else
      this.load=false;
+
      }
 
  }

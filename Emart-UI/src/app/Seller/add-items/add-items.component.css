@@ -29,6 +29,7 @@
   input[type=text], 
   input[type=password],
   input[type=number]
+  
    { 
      
       width: 75%;
@@ -84,4 +85,7 @@
     text-align: center;
     color:black;
   }
- 
+  input[type=file]
+  {
+    margin: 5px 0 22px 10px;
+  }
