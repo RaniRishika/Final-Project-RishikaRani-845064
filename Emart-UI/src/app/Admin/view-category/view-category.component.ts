@@ -58,18 +58,18 @@ export class ViewCategoryComponent implements OnInit {
 
     })
   }
-  Update()
-  {
-    this.cat.catName=this.adminForm.value['catName'],
-    this.cat.briefDetails=this.adminForm.value['briefDetails'],
-    console.log(this.cat);
-    this.service.UpdateCategory(this.cat).subscribe(res=>{
-      console.log("updated");
-      this.Get();
-    },err=>{
-      console.log(err)
-    })
-  }
+  // Update()
+  // {
+  //   this.cat.catName=this.adminForm.value['catName'],
+  //   this.cat.briefDetails=this.adminForm.value['briefDetails'],
+  //   console.log(this.cat);
+  //   this.service.UpdateCategory(this.cat).subscribe(res=>{
+  //     console.log("updated");
+  //     this.Get();
+  //   },err=>{
+  //     console.log(err)
+  //   })
+  // }
   
   Delete(catId:number)
   {
