@@ -26,8 +26,8 @@ export class AddSubCategoryComponent implements OnInit {
   ngOnInit() {
      this.registerForm=this.fromBuilder.group({     
         subCId:[''],
-        catName:[''],
-        subCName:[''],
+        catName:['',Validators.required],
+        subCName:['',Validators.required],
         catId:[''],
         briefSubCdetails:[''],
         gst:[''],

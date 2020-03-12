@@ -26,9 +26,9 @@ export class AddItemsComponent implements OnInit {
   ngOnInit() {
     this.itemForm=this.builder.group({
       itemId:[''],
-      catName:[''],
-      subCName:[''],
-      price:[''],
+      catName:['',[Validators.required]],
+      subCName:['',[Validators.required]],
+      price:['',[Validators.required]],
       itemName:['',[Validators.required,Validators.pattern('^[A-Za-z]*')]],
       itemDesp:[''],
       stockNo:[''],
@@ -79,7 +79,7 @@ AddItem()
 
      this.item=new Items();
      this.item.catid=Number(this.itemForm.value["catName"]);
-    this.item.subcid=Number(this.itemForm.value["subCName"]);
+     this.item.subcid=Number(this.itemForm.value["subCName"]);
      this.item.itemId=Math.floor(Math.random()*1000);
      this.item.sellerid=Number(localStorage.getItem('sellerId'));
      this.item.stockno=Math.floor(Math.random()*1000);

@@ -19,12 +19,10 @@ export class BuyProductsComponent implements OnInit {
   purchaseHistory:Purchase;
   item:Items;
   price:number;
-
   load:boolean=false;
-
-
   constructor(private builder:FormBuilder,private service:BuyerService) { 
   this.item=JSON.parse(localStorage.getItem('item'));
+
    }
 
   ngOnInit() {
@@ -44,10 +42,8 @@ export class BuyProductsComponent implements OnInit {
  onSubmit() {
   this.submitted = true;
   this.BuyProduct();
-  alert("payment done");
+  alert("click ok to procced to continue payment");
   }
- 
-   
 get f()
   {
     return this.buyerForm.controls;
@@ -57,7 +53,7 @@ BuyProduct()
   {
     this.purchaseHistory=new Purchase();
     this.purchaseHistory.buyerId=Number(localStorage.getItem('buyerId'));
-    this.purchaseHistory.sellerId=Number(localStorage.getItem('sellerId'));
+    this.purchaseHistory.sellerId=this.item.sellerid;
     this.purchaseHistory.itemId=this.item.itemId;
     this.purchaseHistory.id=Math.floor(Math.random()*1000);
     this.purchaseHistory.dateTime=new Date();

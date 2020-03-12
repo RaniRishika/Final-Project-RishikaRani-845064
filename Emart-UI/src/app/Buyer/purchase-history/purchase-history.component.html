@@ -1,5 +1,14 @@
 <div class="a">
 <div class="table">
+  <tr>
+    <th>Image</th>
+    <th>ItemId</th>
+    <th>ItemName</th>
+    <th>CountOfItems</th>
+    <th>DateTime</th>
+    <th>Price</th>
+    <th>Total</th>
+  </tr>
 <ng-container *ngFor="let purchase of purch"> 
     <ng-container *ngFor="let item of items">
    <tr *ngIf="item.itemId==purchase.itemId">     
