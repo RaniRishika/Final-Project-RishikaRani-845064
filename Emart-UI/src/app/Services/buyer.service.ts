@@ -54,4 +54,8 @@ export class BuyerService {
   {
     return this.http.get<any>(this.url+'/GetItem/'+itemId,Requestheaders);
   }
+  public PurchaseHistory(buyerId:number):Observable<any>
+  {
+    return this.http.get<any>(this.url+'/PurchaseHistory/'+buyerId,Requestheaders);
+  }
 }

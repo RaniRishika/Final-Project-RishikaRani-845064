@@ -1,1 +1,18 @@
-<p>purchase-history works!</p>
+<div class="a">
+<div class="table">
+<ng-container *ngFor="let purchase of purch"> 
+    <ng-container *ngFor="let item of items">
+   <tr *ngIf="item.itemId==purchase.itemId">     
+ <td><img class="card-img-top" src="..\assets\images\{{item.image}}"> </td>
+ <td >{{item.itemId}}</td>
+  <td>{{item.itemName}}</td>
+  <td>{{purchase.noOfItems}}</td>
+  <td>{{purchase.dateTime}}</td>
+  <td>{{item.price}}</td>
+  <td>{{item.price*purchase.noOfItems}}</td>
+
+    </tr>
+</ng-container>
+</ng-container>
+</div>   
+</div>

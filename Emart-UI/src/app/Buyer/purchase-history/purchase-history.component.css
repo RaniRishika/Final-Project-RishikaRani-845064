@@ -82,8 +82,13 @@
      margin-left:25px;  
   }
   .a{
-    margin-top:5px;
-    margin-left:105px;
+    margin-top:200px;
+    margin-left:500px;
+  }
+  .card-img-top{
+    width:55px;
+    height:60px;
+
   }
   
   
