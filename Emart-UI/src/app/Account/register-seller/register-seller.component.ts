@@ -23,11 +23,11 @@ export class RegisterSellerComponent implements OnInit {
       password:['',[Validators.required,Validators.minLength(6)]],
       email:['',[Validators.required,Validators.email]],
       contact:['',[Validators.required,Validators.pattern("^[6-9][0-9]{9}$")]],
-      companyName:[''],
-      gstin:[''],
+      companyName:['',Validators.required],
+      gstin:['',Validators.required],
       abtCompany:[''],
       postaladdress:[''],
-      compWebsite:[''],
+      compWebsite:['',Validators.required],
     });
   }
   get f()   {

@@ -86,3 +86,7 @@ input[type=email]
 {
   width:125px;
 }
+textarea{
+  width:450px;
+  margin-left:10px;
+}
