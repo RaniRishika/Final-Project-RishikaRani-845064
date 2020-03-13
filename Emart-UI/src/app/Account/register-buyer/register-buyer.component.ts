@@ -10,7 +10,7 @@ import {Buyer} from 'src/app/Models/buyer';
 })
 export class RegisterBuyerComponent implements OnInit {
   registerForm:FormGroup;
-  submitted=false;
+  submitted:boolean=false;
   buyer:Buyer;
   constructor(private fromBuilder:FormBuilder,private service:AccountService) {
 
@@ -18,7 +18,7 @@ export class RegisterBuyerComponent implements OnInit {
   ngOnInit() {
      this.registerForm=this.fromBuilder.group({
       id:[''],
-      username:['',[Validators.required,Validators.pattern('^[A-Za-z]{3,6}$')]],
+      username:['',Validators.required],
       mobile:['',[Validators.required,Validators.pattern("^[6-9][0-9]{9}$")]],
       email:['',[Validators.required,Validators.email]],
       password:['',[Validators.required,Validators.minLength(6)]],
@@ -32,7 +32,10 @@ export class RegisterBuyerComponent implements OnInit {
   }
   onSubmit() {
         this.submitted = true;
-        this.AddBuyer()
+      if(this.registerForm.valid)
+       {
+        this.AddBuyer();
+       }
     }
   onReset() {
          this.submitted = false;

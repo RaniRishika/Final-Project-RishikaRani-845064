@@ -44,7 +44,7 @@ export class AddSubCategoryComponent implements OnInit {
       {
      this.AddSubCategory();
       }
-      }
+   }
   onReset() {
          this.submitted = false;
         this.registerForm.reset();

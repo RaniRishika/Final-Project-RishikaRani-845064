@@ -11,7 +11,7 @@ import {Seller} from 'src/app/Models/seller';
 })
 export class RegisterSellerComponent implements OnInit {
   registerForm:FormGroup;
-  submitted=false;
+  submitted:boolean=false;
   seller:Seller;
 
   constructor(private fromBuilder:FormBuilder,private service:AccountService) { }
@@ -19,7 +19,7 @@ export class RegisterSellerComponent implements OnInit {
   ngOnInit() {
     this.registerForm=this.fromBuilder.group({
       id:[''],
-      username:['',[Validators.required,Validators.pattern('^[A-Za-z]{3,6}$')]],
+      username:['',Validators.required],
       password:['',[Validators.required,Validators.minLength(6)]],
       email:['',[Validators.required,Validators.email]],
       contact:['',[Validators.required,Validators.pattern("^[6-9][0-9]{9}$")]],
@@ -34,8 +34,12 @@ export class RegisterSellerComponent implements OnInit {
   return this.registerForm.controls;   }
   onSubmit() {
          this.submitted = true;
-         this.AddSeller()
-     }
+         if(this.registerForm.valid)
+         {
+          this.AddSeller()
+  
+         }
+           }
   onReset() {
           this.submitted = false;
      this.registerForm.reset();
