@@ -2,44 +2,45 @@
 <div  class="jumbotron jumbotron-fluid " >
 <h3>Registration Form </h3>
   <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-      <div class="form-group">
-          <label>Name
-          <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" /></label>
-          <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
-        
-              <div *ngIf="f.username.errors.required">NAME is required</div>
-           </div> 
-		</div>
-		
-      <div class="form-group">
-          <label>Email
-          <input type="email" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" /></label>
-              <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
-                  <div *ngIf="f.email.errors.required">Email is required</div>
-                  <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
-			  </div>
-		</div>
-
-      <div class="form-group">
-          <label>Password
-          <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors}" /></label>
-          <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
-              <div *ngIf="f.password.errors.required">Password is required</div>
-          </div>
-      </div>
-  <div class="form-group">
-          <label>Mobile
-            <input type="text" formControlName="mobile" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.mobile.errors }" /></label>
-          <div *ngIf="submitted && f.mobile.errors" class="invalid-feedback">
-            <div *ngIf="f.mobile.errors.required">Mobile no is required</div>
-            <div *ngIf="f.mobile.errors.pattern">Mobile no Must be Valid</div>
+        <div class="form-group ">
+            <label> 
+            <input type="text" formControlName="username" placeholder="Name"  class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+            <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+            <div *ngIf="f.username.errors.required">NAME is required</div>
+       </div></label> 
         </div>
-      </div>
-     <div class="text-center">
-      <button  type="submit" >Register</button>&nbsp;
-      <button  type="reset" (click)="onReset()">Reset</button>
-      <p>Already have an account? <a  [routerLink]="['/Home/Login']">Login</a></p>
-     </div>
+        <div class="form-group">
+            <label>
+            <input type="text" formControlName="email" placeholder="Email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+      
+                <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                    <div *ngIf="f.email.errors.required">Email is required</div>
+                    <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+                </div></label>
+        </div>
+      <div class="form-group">
+        <label>
+        <input type="password" formControlName="password" placeholder="Password"class="form-control"[ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+            <div *ngIf="f.password.errors.required">Password is required</div>
+            <div *ngIf="f.password.errors.pattern">Minimum Length should be 6</div>
+        </div>
+      </label>
+    </div>
+    <div class="form-group">
+        <label>
+        <input type="text" formControlName="mobile" placeholder="Mobile Number" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.mobile.errors }" />
+        <div *ngIf="submitted && f.mobile.errors" class="invalid-feedback">
+            <div *ngIf="f.mobile.errors.required">Mobile Number is required</div>	  
+            <div *ngIf="f.mobile.errors.pattern">Mobile Number with 10 digits</div>
+        </div>
+      </label>
+</div>
+    <div class="text-center">
+    <button  type="submit" >Register</button>&nbsp;
+    <button  type="reset" (click)="onReset()">Reset</button>
+    <p>Already have an account? <a  [routerLink]="['/Home/Login']">Login</a></p>
+    </div>
   
       
      
