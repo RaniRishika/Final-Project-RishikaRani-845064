@@ -42,7 +42,7 @@ namespace Emart.BuyerService.Repository
         public List<PurchaseHistory> PurchaseHistory(int bid)
         {
             List<PurchaseHistory> PurchaseHist = _context.PurchaseHistory.Where(e => e.BuyerId == bid).ToList();
-            return PurchaseHist;
+            return PurchaseHist.OrderByDescending(i=>i.DateTime).ToList();
         }
         public List<Category> GetCategories()
         {
